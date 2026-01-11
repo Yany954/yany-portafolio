@@ -319,13 +319,13 @@ const handleDownloadCV = () => {
           </h2>
           <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-violet-500/20 shadow-xl shadow-violet-500/10">
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I'm a passionate Software Engineer who bridges the gap between technology and human experience. My journey in hospitality has taught me the most valuable lesson in tech: <span className="text-violet-400 font-semibold">understanding what users truly need</span>.
+             I am a Software Engineer dedicated to bridging the gap between advanced technology and human needs. With a technical core in React, Flutter, and iOS/Android development, I integrate AI and Google Cloud Platform<span className="text-violet-400 font-semibold">AI and Google Cloud Platform to build intelligent, scalable applications</span>.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              With a strong foundation in mobile and web development, I create solutions that aren't just functional—they're intuitive and delightful. From building cross-platform mobile apps with Flutter to crafting responsive web experiences with React, I bring both technical excellence and user empathy to every project.
+              With a strong foundation in mobile development, I create solutions that aren't just functional—they're intuitive and delightful. From building cross-platform mobile apps with Flutter to crafting responsive web experiences with React, I bring both technical excellence and user empathy to every project.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              Currently expanding my expertise in Artificial Intelligence through Harvard's CS50 AI course, I'm excited to integrate cutting-edge AI capabilities into user-centered applications. My goal is to create technology that feels less like a tool and more like a helpful companion.
+              I am a proactive, bilingual (C1) collaborator committed to excellence and adaptability across the full project lifecycle.
             </p>
           </div>
         </div>
