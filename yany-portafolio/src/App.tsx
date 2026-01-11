@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, Download, Github, Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
-  import jsPDF from 'jspdf';
+import { useState, useEffect, useRef } from 'react';
+import { Menu, X, Download, Github, Linkedin, Mail, Phone } from 'lucide-react';
 // Particle background component
 const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -160,31 +159,6 @@ const Header = () => {
   );
 };
 
-// Typing effect component
-const TypingEffect = ({ texts }: { texts: string[] }) => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-
-  useEffect(() => {
-    if (charIndex < texts[currentIndex].length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + texts[currentIndex][charIndex]);
-        setCharIndex(charIndex + 1);
-      }, 50);
-      return () => clearTimeout(timeout);
-    } else {
-      const timeout = setTimeout(() => {
-        setDisplayText('');
-        setCharIndex(0);
-        setCurrentIndex((currentIndex + 1) % texts.length);
-      }, 2000);
-      return () => clearTimeout(timeout);
-    }
-  }, [charIndex, currentIndex, texts]);
-
-  return <span className="text-cyan-400">{displayText}<span className="animate-pulse">|</span></span>;
-};
 
 // Main App Component
 const App = () => {
