@@ -5,10 +5,10 @@ export const Projects = () => {
     <section id="projects" className="py-20 px-6 max-w-7xl mx-auto">
       {/* Section Title */}
       <div className="text-center mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent inline-block">
+        <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent inline-block">
           &lt; Featured Projects /&gt;
         </h2>
-        <p className="text-gray-400 mt-2 text-sm sm:text-base">
+        <p className="text-slate-600 mt-2 text-sm sm:text-base">
           Highlighting key projects across Mobile (iOS/Android), Web, and AI Solutions.
         </p>
       </div>
@@ -18,11 +18,11 @@ export const Projects = () => {
         {projectsData.map((project) => (
           <div
             key={project.id}
-            className="group relative bg-[#0b0d17]/80 border border-gray-800 hover:border-purple-500/50 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)] flex flex-col justify-between"
+            className="group relative bg-white border border-slate-200 hover:border-violet-300 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_25px_rgba(167,139,250,0.15)] flex flex-col justify-between"
           >
             <div>
               {/* Image Preview Container */}
-              <div className="relative w-full h-52 bg-slate-900/60 overflow-hidden border-b border-gray-800/80">
+              <div className="relative w-full h-52 bg-slate-100 overflow-hidden border-b border-slate-200">
                 {project.image ? (
                   <img
                     src={project.image}
@@ -35,20 +35,20 @@ export const Projects = () => {
                   </div>
                 )}
                 {/* Badge */}
-                <span className="absolute top-3 right-3 bg-purple-900/80 border border-purple-500/30 text-purple-200 text-xs px-3 py-1 rounded-full backdrop-blur-md font-mono">
+                <span className="absolute top-3 right-3 bg-violet-100 border border-violet-200 text-violet-700 text-xs px-3 py-1 rounded-full backdrop-blur-md font-mono">
                   {project.badge}
                 </span>
               </div>
 
               {/* Project Info */}
               <div className="p-6">
-                <span className="text-cyan-400 text-xs font-mono tracking-wider uppercase">
+                <span className="text-violet-700 text-xs font-mono tracking-wider uppercase">
                   {project.subtitle}
                 </span>
-                <h3 className="text-xl font-bold text-white mt-1 mb-3 group-hover:text-purple-300 transition-colors">
+                <h3 className="text-xl font-bold text-slate-800 mt-1 mb-3 group-hover:text-violet-700 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                <p className="text-slate-700 text-sm leading-relaxed mb-6">
                   {project.description}
                 </p>
 
@@ -57,7 +57,7 @@ export const Projects = () => {
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="bg-gray-800/60 text-purple-300 border border-purple-500/20 text-xs px-2.5 py-1 rounded-md font-mono"
+                      className="bg-slate-100 text-violet-700 border border-violet-200 text-xs px-2.5 py-1 rounded-md font-mono"
                     >
                       {tag}
                     </span>
@@ -72,7 +72,7 @@ export const Projects = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 transition-all shadow-md hover:shadow-purple-500/25 active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-slate-800 to-violet-700 hover:from-slate-700 hover:to-violet-600 transition-all shadow-md hover:shadow-violet-200 active:scale-[0.98]"
               >
                 <span>{project.linkText}</span>
                 <svg

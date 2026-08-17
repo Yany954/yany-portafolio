@@ -23,13 +23,13 @@ export const Header = () => {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-900/95 backdrop-blur-md shadow-lg shadow-violet-500/10"
-          : "bg-transparent"
+          ? "bg-white/90 backdrop-blur-md shadow-lg shadow-slate-200/80 border-b border-slate-200"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+          <div className="text-2xl font-bold bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
             &lt;YG /&gt;
           </div>
 
@@ -39,7 +39,7 @@ export const Header = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className="text-gray-300 hover:text-violet-400 transition-colors capitalize"
+                  className="text-slate-600 hover:text-violet-700 transition-colors capitalize"
                 >
                   {item}
                 </button>

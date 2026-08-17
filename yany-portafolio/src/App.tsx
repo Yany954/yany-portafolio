@@ -54,7 +54,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-gray-950 text-gray-100 min-h-screen overflow-x-hidden">
+    <div className="bg-white text-slate-800 min-h-screen overflow-x-hidden">
       <ParticleBackground />
       <Header />
 
@@ -71,17 +71,17 @@ const App = () => {
           className="text-center max-w-4xl mx-auto opacity-0"
           style={{ animation: "fadeInUp 1s ease-out forwards" }}
         >
-          <div className="mb-8 font-mono text-sm md:text-base text-gray-400">
+          <div className="mb-8 font-mono text-sm md:text-base text-slate-500">
             <div className="mt-2">
               &gt; Skills: [iOS, Android, React, Flutter, AI, GCP]
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
             Yany Gonzalez Yepez
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
+          <p className="text-xl md:text-2xl text-slate-600 mb-8">
             Software Engineer | Mobile & Web Developer | AI Enthusiast
           </p>
 
@@ -89,14 +89,14 @@ const App = () => {
             <button
               id="download-btn"
               onClick={handleDownloadCV}
-              className="px-8 py-3 bg-gradient-to-r from-violet-600 to-purple-600 rounded-lg font-semibold hover:from-violet-500 hover:to-purple-500 transition-all flex items-center gap-2 shadow-lg shadow-violet-500/50"
+              className="px-8 py-3 bg-gradient-to-r from-slate-800 to-violet-700 rounded-lg font-semibold text-white hover:from-slate-700 hover:to-violet-600 transition-all flex items-center gap-2 shadow-lg shadow-violet-300/50"
             >
               <Download size={20} />
               Download CV.pdf
             </button>
             <a
               href="#contact"
-              className="px-8 py-3 border-2 border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all"
+              className="px-8 py-3 border-2 border-slate-300 rounded-lg font-semibold text-slate-700 hover:bg-slate-100 transition-all"
             >
               Contact Me
             </a>
@@ -108,7 +108,7 @@ const App = () => {
               href="https://linkedin.com/in/yany-gonzalez-yepez-80594820b/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-500 hover:text-violet-700 transition-colors"
               aria-label="LinkedIn Profile"
             >
               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@ const App = () => {
               href="https://github.com/Yany954"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-500 hover:text-violet-700 transition-colors"
               aria-label="GitHub Profile"
             >
               <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ const App = () => {
             {/* Mail Button */}
             <a
               href="mailto:yanygonzalezyepez@gmail.com"
-              className="text-gray-400 hover:text-cyan-400 transition-colors"
+              className="text-slate-500 hover:text-violet-700 transition-colors"
               aria-label="Send Email"
             >
               <Mail size={24} />
@@ -150,14 +150,14 @@ const App = () => {
         className="py-20 px-6 opacity-0"
       >
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
             About Me
           </h2>
 
-          <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-violet-500/20 shadow-xl shadow-violet-500/10">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200 shadow-xl shadow-slate-200/80">
             <div className="grid items-center gap-8 md:grid-cols-[260px_1fr]">
               <div className="flex justify-center md:justify-start">
-                <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full border-4 border-violet-500/60 shadow-[0_0_35px_rgba(168,85,247,0.35)] overflow-hidden bg-gray-900">
+                <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full border-4 border-violet-200 shadow-[0_0_30px_rgba(139,92,246,0.18)] overflow-hidden bg-slate-100">
                   <img
                     src={profileImage}
                     alt="Yany Gonzalez Yepez"
@@ -167,25 +167,25 @@ const App = () => {
               </div>
 
               <div>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                <p className="text-lg text-slate-700 leading-relaxed mb-6">
                   I am a Software Engineer dedicated to bridging the gap between
                   advanced technology and human needs. With a technical core in
                   React, Flutter, and iOS/Android development, I integrate AI and
                   Google Cloud Platform
-                  <span className="text-violet-400 font-semibold">
+                  <span className="text-violet-700 font-semibold">
                     {" "}AI and Google Cloud Platform to build intelligent, scalable
                     applications
                   </span>
                   .
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                <p className="text-lg text-slate-700 leading-relaxed mb-6">
                   With a strong foundation in mobile development, I create solutions
                   that aren't just functional—they're intuitive and delightful. From
                   building cross-platform mobile apps with Flutter to crafting
                   responsive web experiences with React, I bring both technical
                   excellence and user empathy to every project.
                 </p>
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg text-slate-700 leading-relaxed">
                   I am a proactive, bilingual (C1) collaborator committed to
                   excellence and adaptability across the full project lifecycle.
                 </p>
@@ -204,23 +204,23 @@ const App = () => {
         className="py-20 px-6 opacity-0"
       >
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
             Skill Nebula
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-violet-500/20 hover:border-violet-500/40 transition-all hover:shadow-lg hover:shadow-violet-500/20"
+                className="bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-slate-200 hover:border-violet-300 transition-all hover:shadow-lg hover:shadow-violet-100"
                 onMouseEnter={() => setHoveredSkill(skill.name)}
                 onMouseLeave={() => setHoveredSkill(null)}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex justify-between items-center mb-3">
-                  <span className="text-xl font-semibold">{skill.name}</span>
-                  <span className="text-sm text-gray-400">{skill.level}%</span>
+                  <span className="text-xl font-semibold text-slate-800">{skill.name}</span>
+                  <span className="text-sm text-slate-500">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-gray-800 rounded-full h-3 mb-3 overflow-hidden">
+                <div className="w-full bg-slate-200 rounded-full h-3 mb-3 overflow-hidden">
                   <div
                     className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000`}
                     style={{
@@ -230,7 +230,7 @@ const App = () => {
                   />
                 </div>
                 {hoveredSkill === skill.name && (
-                  <p className="text-sm text-gray-400 animate-fade-in">
+                  <p className="text-sm text-slate-600 animate-fade-in">
                     {skill.description}
                   </p>
                 )}
@@ -238,11 +238,11 @@ const App = () => {
             ))}
           </div>
 
-          <div className="mt-12 bg-gradient-to-br from-violet-900/30 to-purple-900/30 rounded-2xl p-8 border border-violet-500/30">
-            <h3 className="text-2xl font-bold mb-4 text-violet-300">
+          <div className="mt-12 bg-gradient-to-br from-violet-50 to-slate-100 rounded-2xl p-8 border border-violet-200">
+            <h3 className="text-2xl font-bold mb-4 text-violet-700">
               AI & Logic
             </h3>
-            <p className="text-gray-300 mb-4">
+            <p className="text-slate-700 mb-4">
               I build scalable digital solutions with intelligent automation. I
               develop cross-platform mobile apps using Flutter and Kotlin
               Multiplatform, deploy to production via App Store, and architect
@@ -252,16 +252,16 @@ const App = () => {
               empathy to create intuitive, high-performance applications.
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 bg-violet-500/20 rounded-full text-sm">
+              <span className="px-4 py-2 bg-violet-100 rounded-full text-sm text-violet-700">
                 Vertex AI
               </span>
-              <span className="px-4 py-2 bg-purple-500/20 rounded-full text-sm">
+              <span className="px-4 py-2 bg-slate-200 rounded-full text-sm text-slate-700">
                 Google Cloud Platform
               </span>
-              <span className="px-4 py-2 bg-cyan-500/20 rounded-full text-sm">
+              <span className="px-4 py-2 bg-cyan-100 rounded-full text-sm text-cyan-700">
                 Typescript
               </span>
-              <span className="px-4 py-2 bg-blue-500/20 rounded-full text-sm">
+              <span className="px-4 py-2 bg-blue-100 rounded-full text-sm text-blue-700">
                 Automation
               </span>
             </div>
@@ -283,32 +283,32 @@ const App = () => {
         className="py-20 px-6 opacity-0"
       >
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
             My experience
           </h2>
           <div className="space-y-8">
             {timeline.map((item, index) => (
               <div
                 key={index}
-                className="relative pl-8 md:pl-16 border-l-2 border-violet-500/30 hover:border-violet-500 transition-all"
+                className="relative pl-8 md:pl-16 border-l-2 border-slate-200 hover:border-violet-300 transition-all"
               >
-                <div className="absolute left-0 top-0 w-4 h-4 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-full -translate-x-[9px] animate-pulse" />
-                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-violet-500/20 hover:shadow-lg hover:shadow-violet-500/20 transition-all">
+                <div className="absolute left-0 top-0 w-4 h-4 bg-gradient-to-br from-violet-500 to-slate-400 rounded-full -translate-x-[9px] animate-pulse" />
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-slate-200 hover:shadow-lg hover:shadow-violet-100 transition-all">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span className="text-sm text-gray-400 font-mono">
+                    <span className="text-sm text-slate-500 font-mono">
                       {item.year}
                     </span>
                     <span
-                      className={`px-3 py-1 bg-gradient-to-r ${item.color} rounded-full text-xs font-semibold text-gray-900`}
+                      className={`px-3 py-1 bg-gradient-to-r ${item.color} rounded-full text-xs font-semibold text-slate-800`}
                     >
                       {item.tag}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                  <div className="text-violet-400 mb-3">
+                  <h3 className="text-2xl font-bold mb-2 text-slate-800">{item.title}</h3>
+                  <div className="text-violet-700 mb-3">
                     {item.company} | {item.location}
                   </div>
-                  <p className="text-gray-300">{item.description}</p>
+                  <p className="text-slate-700">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -325,28 +325,28 @@ const App = () => {
         className="py-20 px-6 opacity-0"
       >
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
             Contact me
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <a
               href="mailto:yanygonzalezyepez@gmail.com"
-              className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-violet-500/20 hover:border-violet-500/40 transition-all hover:shadow-lg hover:shadow-violet-500/20 flex items-center gap-4"
+              className="bg-white/90 backdrop-blur-sm rounded-xl p-8 border border-slate-200 hover:border-violet-300 transition-all hover:shadow-lg hover:shadow-violet-100 flex items-center gap-4"
             >
-              <Mail className="text-violet-400" size={32} />
+              <Mail className="text-violet-700" size={32} />
               <div>
-                <div className="text-sm text-gray-400">Email</div>
-                <div className="text-lg">yanygonzalezyepez@gmail.com</div>
+                <div className="text-sm text-slate-500">Email</div>
+                <div className="text-lg text-slate-800">yanygonzalezyepez@gmail.com</div>
               </div>
             </a>
             <a
               href="tel:+17866696004"
-              className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-violet-500/20 hover:border-violet-500/40 transition-all hover:shadow-lg hover:shadow-violet-500/20 flex items-center gap-4"
+              className="bg-white/90 backdrop-blur-sm rounded-xl p-8 border border-slate-200 hover:border-violet-300 transition-all hover:shadow-lg hover:shadow-violet-100 flex items-center gap-4"
             >
-              <Phone className="text-cyan-400" size={32} />
+              <Phone className="text-violet-700" size={32} />
               <div>
-                <div className="text-sm text-gray-400">Phone</div>
-                <div className="text-lg">+1 786 669 6004</div>
+                <div className="text-sm text-slate-500">Phone</div>
+                <div className="text-lg text-slate-800">+1 786 669 6004</div>
               </div>
             </a>
           </div>
@@ -354,8 +354,8 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-violet-500/20">
-        <div className="container mx-auto text-center text-gray-400">
+      <footer className="py-8 px-6 border-t border-slate-200">
+        <div className="container mx-auto text-center text-slate-500">
           <p>
             &copy; 2026 Yany Gonzalez Yepez. Compiled with React & TypeScript.
           </p>
@@ -396,16 +396,16 @@ const App = () => {
         }
 
         ::-webkit-scrollbar-track {
-          background: #0a0f1e;
+          background: #f1f5f9;
         }
 
         ::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #8b5cf6, #06b6d4);
+          background: linear-gradient(to bottom, #8b5cf6, #cbd5e1);
           border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #7c3aed, #0891b2);
+          background: linear-gradient(to bottom, #7c3aed, #94a3b8);
         }
       `}</style>
     </div>
