@@ -1,9 +1,146 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/bricolage-grotesque/opsz.css";
+
+/* The theme follows the operating system; there is no manual toggle. */
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+@theme inline {
+  --font-sans: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-sans);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-pink: var(--pink);
+  --color-navy: var(--navy);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+  --radius-2xl: var(--radius);
+  --radius-3xl: var(--radius);
+  --radius-4xl: 9999px;
+
+  /* Five type steps, far apart. */
+  --text-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --text-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --text-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --text-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --text-poster: clamp(4rem, 12vw, 10rem);
+}
+
+:root {
+  --navy: #1a2039;
+  --pink: #f9a3c0;
+
+  --background: #f4f1ec;
+  --foreground: #1a2039;
+  --card: #eae5dd;
+  --card-foreground: #1a2039;
+  --popover: #f4f1ec;
+  --popover-foreground: #1a2039;
+  --primary: var(--pink);
+  --primary-foreground: var(--navy);
+  --secondary: #eae5dd;
+  --secondary-foreground: #1a2039;
+  --muted: #eae5dd;
+  --muted-foreground: #565b72;
+  --accent: #eae5dd;
+  --accent-foreground: #1a2039;
+  --destructive: #b42318;
+  --border: #d9d2c6;
+  --input: #d9d2c6;
+  --ring: #1a2039;
+  /* Text-safe accent: pink is only a fill on the light ground. */
+  --accent-text: #1a2039;
+  --radius: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a2039;
+    --foreground: #f3e9ee;
+    --card: #212846;
+    --card-foreground: #f3e9ee;
+    --popover: #212846;
+    --popover-foreground: #f3e9ee;
+    --secondary: #212846;
+    --secondary-foreground: #f3e9ee;
+    --muted: #212846;
+    --muted-foreground: #bcadba;
+    --accent: #2a3255;
+    --accent-foreground: #f3e9ee;
+    --destructive: #ff8a80;
+    --border: #323b62;
+    --input: #323b62;
+    --ring: var(--pink);
+    --accent-text: var(--pink);
+  }
+}
 
 @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    color-scheme: light dark;
+    -webkit-text-size-adjust: 100%;
+  }
   body {
-    @apply bg-white text-slate-800;
+    @apply bg-background text-foreground antialiased;
+    font-size: var(--text-body);
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--pink);
+    color: var(--navy);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
