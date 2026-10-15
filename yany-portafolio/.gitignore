@@ -27,3 +27,5 @@ dist-ssr
 
 # Raw screenshots may contain private client data; commit redacted copies only
 src/assets/Screenshot*
+
+./claude
