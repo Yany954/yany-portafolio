@@ -49,9 +49,9 @@ export const projects: Project[] = [
     id: "los-trinitarios",
     title: "Funerales Los Trinitarios",
     kind: "Client platform · internal dashboard",
-    status: "In development",
+    status: "In testing",
     description:
-      "A family-owned funeral home in Colombia needed order across its affiliates, services, coffin catalogue, burial vaults, partner agreements and billing. I built a dashboard with separate admin and employee permissions, shaped around the company’s own rules rather than a generic template.",
+      "A family-owned funeral home in Colombia needed order across its affiliates, services, coffin catalogue, burial vaults, partner agreements and billing. I built a dashboard with separate admin and employee permissions, shaped around the company’s own rules rather than a generic template. Development is nearly finished and the platform is now in testing.",
     tags: ["Admin & employee roles", "Affiliates", "Billing", "Inventory", "Multi-branch"],
     field: "#561b36",
     images: [
@@ -104,10 +104,10 @@ export const projects: Project[] = [
   {
     id: "iching",
     title: "IChing — El Oráculo Emprendedor",
-    kind: "iOS production app",
+    kind: "Built at 38 Grados Lab for a client in Mexico",
     status: "Live on the App Store",
     description:
-      "Native iOS application available on the App Store. Led a complete UI/UX redesign, restructured the core user interaction flow, and managed ongoing app maintenance and App Store releases.",
+      "Native iOS app that 38 Grados Lab delivered to a Mexican company; the product belongs to that client. I was in charge of its development: a complete UI/UX redesign, a restructured core interaction flow, and ongoing maintenance and App Store releases.",
     tags: ["iOS", "Swift", "UI/UX redesign", "App Store"],
     field: "#eee6d4",
     images: [
