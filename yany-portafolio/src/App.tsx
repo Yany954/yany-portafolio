@@ -8,12 +8,6 @@ import { Contact, SiteFooter } from "./components/Contact";
 const App = () => {
   return (
     <>
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:px-4 focus:py-3 focus:text-primary-foreground"
-      >
-        Skip to content
-      </a>
       <SiteHeader />
       <main id="main">
         <Hero />
