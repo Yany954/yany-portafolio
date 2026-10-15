@@ -1,153 +1,30 @@
-import { useState, useEffect, useRef } from "react";
-import { Download, Mail, Phone } from "lucide-react";
-import { ParticleBackground } from "./components/ParticleBackground";
-import { Header } from "./components/Header";
+import { useState } from "react";
+import { Mail, Phone } from "lucide-react";
+import { SiteHeader } from "./components/SiteHeader";
+import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
 import { skills, timeline } from "./data/portafolioData";
 import profileImage from "./assets/profile.png";
 
 const App = () => {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in-up");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    Object.values(sectionsRef.current).forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleDownloadCV = () => {
-    const btn = document.getElementById("download-btn");
-    if (btn) {
-      btn.classList.add("animate-pulse");
-      setTimeout(() => {
-        btn.classList.remove("animate-pulse");
-
-        const link = document.createElement("a");
-        link.href = "/assets/Yany_Gonzalez_Yepez_CV.pdf";
-        link.download = "Yany_Gonzalez_Yepez_CV.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        const successMsg = document.createElement("div");
-        successMsg.className =
-          "fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in";
-        successMsg.textContent = "✓ CV Downloaded Successfully!";
-        document.body.appendChild(successMsg);
-        setTimeout(() => successMsg.remove(), 3000);
-      }, 1000);
-    }
-  };
 
   return (
-    <div className="bg-white text-slate-800 min-h-screen overflow-x-hidden">
-      <ParticleBackground />
-      <Header />
-
-      {/* Hero Section */}
-      <section
-        id="home"
-        ref={(el) => {
-          sectionsRef.current["home"] = el;
-        }}
-        className="min-h-screen flex items-center justify-center px-6 pt-20"
-        style={{ transform: "translateZ(0)" }}
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:px-4 focus:py-3 focus:text-primary-foreground"
       >
-        <div
-          className="text-center max-w-4xl mx-auto opacity-0"
-          style={{ animation: "fadeInUp 1s ease-out forwards" }}
-        >
-          <div className="mb-8 font-mono text-sm md:text-base text-slate-500">
-            <div className="mt-2">
-              &gt; Skills: [iOS, Android, React, Flutter, AI, GCP]
-            </div>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
-            Yany Gonzalez Yepez
-          </h1>
-
-          <p className="text-xl md:text-2xl text-slate-600 mb-8">
-            Software Engineer | Mobile & Web Developer | AI Enthusiast
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <button
-              id="download-btn"
-              onClick={handleDownloadCV}
-              className="px-8 py-3 bg-gradient-to-r from-slate-800 to-violet-700 rounded-lg font-semibold text-white hover:from-slate-700 hover:to-violet-600 transition-all flex items-center gap-2 shadow-lg shadow-violet-300/50"
-            >
-              <Download size={20} />
-              Download CV.pdf
-            </button>
-            <a
-              href="#contact"
-              className="px-8 py-3 border-2 border-slate-300 rounded-lg font-semibold text-slate-700 hover:bg-slate-100 transition-all"
-            >
-              Contact Me
-            </a>
-          </div>
-
-          <div className="flex justify-center gap-6 mt-8">
-            {/* LinkedIn Button */}
-            <a
-              href="https://linkedin.com/in/yany-gonzalez-yepez-80594820b/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-500 hover:text-violet-700 transition-colors"
-              aria-label="LinkedIn Profile"
-            >
-              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-              </svg>
-            </a>
-
-            {/* GitHub Button */}
-            <a
-              href="https://github.com/Yany954"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-500 hover:text-violet-700 transition-colors"
-              aria-label="GitHub Profile"
-            >
-              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
-              </svg>
-            </a>
-
-            {/* Mail Button */}
-            <a
-              href="mailto:yanygonzalezyepez@gmail.com"
-              className="text-slate-500 hover:text-violet-700 transition-colors"
-              aria-label="Send Email"
-            >
-              <Mail size={24} />
-            </a>
-          </div>
-        </div>
-      </section>
+        Skip to content
+      </a>
+      <SiteHeader />
+      <main id="main">
+      <Hero />
 
       {/* About Section */}
       <section
         id="about"
-        ref={(el) => {
-          sectionsRef.current["about"] = el;
-        }}
-        className="py-20 px-6 opacity-0"
+        className="py-20 px-6"
       >
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
@@ -170,8 +47,7 @@ const App = () => {
                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                   I am a Software Engineer dedicated to bridging the gap between
                   advanced technology and human needs. With a technical core in
-                  React, Flutter, and iOS/Android development, I integrate AI and
-                  Google Cloud Platform
+                  React, Flutter, and iOS/Android development, I integrate
                   <span className="text-violet-700 font-semibold">
                     {" "}AI and Google Cloud Platform to build intelligent, scalable
                     applications
@@ -198,10 +74,7 @@ const App = () => {
       {/* Skills Section */}
       <section
         id="skills"
-        ref={(el) => {
-          sectionsRef.current["skills"] = el;
-        }}
-        className="py-20 px-6 opacity-0"
+        className="py-20 px-6"
       >
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
@@ -270,17 +143,12 @@ const App = () => {
       </section>
 
       {/* Projects Section */}
-      <div ref={(el) => { sectionsRef.current["projects"] = el; }}>
-        <Projects />
-      </div>
+      <Projects />
 
       {/* Experience Timeline Section */}
       <section
         id="experience"
-        ref={(el) => {
-          sectionsRef.current["experience"] = el;
-        }}
-        className="py-20 px-6 opacity-0"
+        className="py-20 px-6"
       >
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
@@ -319,10 +187,7 @@ const App = () => {
       {/* Contact Section */}
       <section
         id="contact"
-        ref={(el) => {
-          sectionsRef.current["contact"] = el;
-        }}
-        className="py-20 px-6 opacity-0"
+        className="py-20 px-6"
       >
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
@@ -353,6 +218,8 @@ const App = () => {
         </div>
       </section>
 
+      </main>
+
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-slate-200">
         <div className="container mx-auto text-center text-slate-500">
@@ -362,53 +229,7 @@ const App = () => {
         </div>
       </footer>
 
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .animate-fade-in {
-          animation: fadeIn 0.3s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-
-        html {
-          scroll-behavior: smooth;
-        }
-
-        ::-webkit-scrollbar {
-          width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: #f1f5f9;
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #8b5cf6, #cbd5e1);
-          border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #7c3aed, #94a3b8);
-        }
-      `}</style>
-    </div>
+    </>
   );
 };
 

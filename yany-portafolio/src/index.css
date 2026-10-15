@@ -39,12 +39,17 @@
   --radius-3xl: var(--radius);
   --radius-4xl: 9999px;
 
-  /* Five type steps, far apart. */
-  --text-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
-  --text-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
-  --text-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
-  --text-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
-  --text-poster: clamp(4rem, 12vw, 10rem);
+  /* Five type steps, far apart, on Tailwind's own names so class merging understands them. */
+  --text-sm: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --text-sm--line-height: 1.45;
+  --text-base: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --text-base--line-height: 1.5;
+  --text-xl: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --text-xl--line-height: 1.3;
+  --text-5xl: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --text-5xl--line-height: 1;
+  --text-8xl: clamp(4rem, 12vw, 10rem);
+  --text-8xl--line-height: 0.85;
 }
 
 :root {
@@ -109,7 +114,7 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-size: var(--text-body);
+    font-size: var(--text-base);
     line-height: 1.5;
     font-variant-numeric: tabular-nums;
   }
@@ -129,6 +134,27 @@
   ::selection {
     background: var(--pink);
     color: var(--navy);
+  }
+}
+
+/* One pair of page margins for the whole site. */
+@utility shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 90rem;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+/* Text links: ink with a pink underline that thickens on hover. */
+@utility text-link {
+  color: var(--foreground);
+  text-decoration-line: underline;
+  text-decoration-color: var(--pink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+  transition: text-decoration-thickness 150ms ease;
+  &:hover {
+    text-decoration-thickness: 4px;
   }
 }
 
