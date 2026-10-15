@@ -1,4 +1,4 @@
-import profileImage from "@/assets/profile.png";
+import profileImage from "@/assets/profile.jpeg";
 import { about, education, languages, profile, skillGroups } from "@/data/portfolio";
 
 export function About() {

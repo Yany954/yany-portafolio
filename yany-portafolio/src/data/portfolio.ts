@@ -50,6 +50,28 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "cloud-video-player",
+    title: "Cloud Video Player",
+    kind: "Personal project",
+    status: "In development",
+    description:
+      "Born from running out of phone storage and the hassle of passing around videos after family events and concerts. Upload your videos, group them into events and share them with the people who were there. Create an account and try it; it is free up to 15\u00a0GB.",
+    tags: ["Next.js", "AWS", "Video upload", "Event sharing"],
+    field: "#dfe5f2",
+    images: [
+      {
+        src: cloudVideoPlayerImg,
+        alt: "Cloud Video Player upload screen with a drop zone and an option to upload straight into an event",
+        width: 836,
+        height: 825,
+      },
+    ],
+    link: {
+      href: "https://main.d1fywgy7g1rdyk.amplifyapp.com/",
+      label: "Try it free",
+    },
+  },
+  {
     id: "front-desk-ai",
     title: "Front Desk AI",
     kind: "Internal tool · La Quinta Inn & Suites",
@@ -91,6 +113,28 @@ export const projects: Project[] = [
     note: "No public link: accounts are invite-only because it holds private hotel information.",
   },
   {
+    id: "iching",
+    title: "IChing — El Oráculo Emprendedor",
+    kind: "Built at 38 Grados Lab for a client in Mexico",
+    status: "Live on the App Store",
+    description:
+      "Native iOS app that 38 Grados Lab delivered to a Mexican company; the product belongs to that client. I was in charge of its development: a complete UI/UX redesign, a restructured core interaction flow, and ongoing maintenance and App Store releases.",
+    tags: ["iOS", "Swift", "UI/UX redesign", "App Store"],
+    field: "#eee6d4",
+    images: [
+      {
+        src: ichingImg,
+        alt: "IChing app home screen with the gold Oráculo wordmark",
+        width: 738,
+        height: 1600,
+      },
+    ],
+    link: {
+      href: "https://apps.apple.com/ar/app/iching-el-or%C3%A1culo-emprendedor/id6754896663",
+      label: "View on the App Store",
+    },
+  },
+  {
     id: "los-trinitarios",
     title: "Funerales Los Trinitarios",
     kind: "Client platform · internal dashboard",
@@ -123,72 +167,6 @@ export const projects: Project[] = [
       },
     ],
     note: "No public link: the dashboard holds private client data.",
-  },
-  {
-    id: "cloud-video-player",
-    title: "Cloud Video Player",
-    kind: "Personal project",
-    status: "In development",
-    description:
-      "Born from running out of phone storage and the hassle of passing around videos after family events and concerts. Upload your videos, group them into events and share them with the people who were there. Create an account and try it; it is free up to 15\u00a0GB.",
-    tags: ["Next.js", "AWS", "Video upload", "Event sharing"],
-    field: "#dfe5f2",
-    images: [
-      {
-        src: cloudVideoPlayerImg,
-        alt: "Cloud Video Player upload screen with a drop zone and an option to upload straight into an event",
-        width: 836,
-        height: 825,
-      },
-    ],
-    link: {
-      href: "https://main.d1fywgy7g1rdyk.amplifyapp.com/",
-      label: "Try it free",
-    },
-  },
-  {
-    id: "iching",
-    title: "IChing — El Oráculo Emprendedor",
-    kind: "Built at 38 Grados Lab for a client in Mexico",
-    status: "Live on the App Store",
-    description:
-      "Native iOS app that 38 Grados Lab delivered to a Mexican company; the product belongs to that client. I was in charge of its development: a complete UI/UX redesign, a restructured core interaction flow, and ongoing maintenance and App Store releases.",
-    tags: ["iOS", "Swift", "UI/UX redesign", "App Store"],
-    field: "#eee6d4",
-    images: [
-      {
-        src: ichingImg,
-        alt: "IChing app home screen with the gold Oráculo wordmark",
-        width: 738,
-        height: 1600,
-      },
-    ],
-    link: {
-      href: "https://apps.apple.com/ar/app/iching-el-or%C3%A1culo-emprendedor/id6754896663",
-      label: "View on the App Store",
-    },
-  },
-  {
-    id: "ai-simulator",
-    title: "AI Interview Simulator",
-    kind: "AI & machine learning",
-    status: "AI Engineer Course 2026 capstone",
-    description:
-      "Interactive job interview simulator developed as the capstone project for “The AI Engineer Course 2026”. Evaluates candidate responses in real time using LLMs and provides instant feedback.",
-    tags: ["Python", "Streamlit", "LLMs", "GenAI", "Prompt engineering"],
-    field: "#0e1117",
-    images: [
-      {
-        src: aiSimulatorImg,
-        alt: "AI Interview Simulator chat, with the assistant opening the interview",
-        width: 895,
-        height: 752,
-      },
-    ],
-    link: {
-      href: "https://interview-ai-simulator-git-streaml.streamlit.app/",
-      label: "Try the AI demo",
-    },
   },
   {
     id: "naya-sport",
@@ -227,6 +205,28 @@ export const projects: Project[] = [
       },
     ],
     note: "Still in development, so there is no public build yet.",
+  },
+  {
+    id: "ai-simulator",
+    title: "AI Interview Simulator",
+    kind: "AI & machine learning",
+    status: "AI Engineer Course 2026 capstone",
+    description:
+      "Interactive job interview simulator developed as the capstone project for “The AI Engineer Course 2026”. Evaluates candidate responses in real time using LLMs and provides instant feedback.",
+    tags: ["Python", "Streamlit", "LLMs", "GenAI", "Prompt engineering"],
+    field: "#0e1117",
+    images: [
+      {
+        src: aiSimulatorImg,
+        alt: "AI Interview Simulator chat, with the assistant opening the interview",
+        width: 895,
+        height: 752,
+      },
+    ],
+    link: {
+      href: "https://interview-ai-simulator-git-streaml.streamlit.app/",
+      label: "Try the AI demo",
+    },
   },
 ];
 
