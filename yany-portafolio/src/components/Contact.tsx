@@ -52,19 +52,11 @@ export function Contact() {
 
 export function SiteFooter() {
   return (
-    <footer className="inverse overflow-hidden">
+    <footer className="inverse pb-10">
       <div className="shell flex flex-wrap justify-between gap-x-8 gap-y-2 text-sm text-muted-foreground">
         <p>© 2026 {profile.name}</p>
         <p>Built with React, TypeScript and Tailwind CSS</p>
       </div>
-      {/* The name runs off the bottom edge; it is decoration, the © line carries it. */}
-      <p
-        aria-hidden="true"
-        translate="no"
-        className="mt-4 translate-y-[28%] pl-[clamp(1rem,4vw,3rem)] text-[26vw] leading-[0.8] font-semibold tracking-[-0.05em] whitespace-nowrap select-none"
-      >
-        {profile.firstName} {profile.lastName.split(" ")[0]}
-      </p>
     </footer>
   );
 }
