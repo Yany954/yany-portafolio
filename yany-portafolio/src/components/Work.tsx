@@ -220,7 +220,7 @@ export function Work() {
                       >
                         {project.link.label}
                         <ArrowUpRight aria-hidden className="size-4" />
-                        <span className="sr-only">(opens in a new tab)</span>
+                        <span className="sr-only"> (opens in a new tab)</span>
                       </a>
                     ) : (
                       <p className="text-sm text-muted-foreground">{project.note}</p>

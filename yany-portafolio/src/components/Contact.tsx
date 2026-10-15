@@ -60,6 +60,7 @@ export function SiteFooter() {
       {/* The name runs off the bottom edge; it is decoration, the © line carries it. */}
       <p
         aria-hidden="true"
+        translate="no"
         className="mt-4 translate-y-[28%] pl-[clamp(1rem,4vw,3rem)] text-[26vw] leading-[0.8] font-semibold tracking-[-0.05em] whitespace-nowrap select-none"
       >
         {profile.firstName} {profile.lastName.split(" ")[0]}

@@ -14,7 +14,7 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="shell flex min-h-[calc(100svh-4rem)] flex-col justify-between gap-10 pt-4 pb-12 lg:pt-8"
     >
-      <h1 id="hero-title" className="sr-only">
+      <h1 id="hero-title" translate="no" className="sr-only">
         {profile.name}, {profile.role}
       </h1>
 

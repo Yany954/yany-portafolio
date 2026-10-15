@@ -53,7 +53,7 @@ export function SiteHeader() {
           className="flex min-h-11 items-center gap-2 font-medium tracking-tight"
         >
           <img src="/YG_Logo.svg" alt="" width={30} height={20} className="dark:invert" />
-          <span>{profile.name}</span>
+          <span translate="no">{profile.name}</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

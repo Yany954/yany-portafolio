@@ -51,7 +51,7 @@ export const projects: Project[] = [
     kind: "Client platform · internal dashboard",
     status: "In development",
     description:
-      "A family-owned funeral home in Colombia needed order across its affiliates, services, coffin catalogue, burial vaults, partner agreements and billing. I built a dashboard with separate admin and employee permissions, shaped around the company's own rules rather than a generic template.",
+      "A family-owned funeral home in Colombia needed order across its affiliates, services, coffin catalogue, burial vaults, partner agreements and billing. I built a dashboard with separate admin and employee permissions, shaped around the company’s own rules rather than a generic template.",
     tags: ["Admin & employee roles", "Affiliates", "Billing", "Inventory", "Multi-branch"],
     field: "#561b36",
     images: [
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     kind: "Personal project",
     status: "In development",
     description:
-      "Born from running out of phone storage and the hassle of passing around videos after family events and concerts. Upload your videos, group them into events and share them with the people who were there. Create an account and try it; it is free up to 15 GB.",
+      "Born from running out of phone storage and the hassle of passing around videos after family events and concerts. Upload your videos, group them into events and share them with the people who were there. Create an account and try it; it is free up to 15\u00a0GB.",
     tags: ["Next.js", "AWS", "Video upload", "Event sharing"],
     field: "#dfe5f2",
     images: [
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     kind: "AI & machine learning",
     status: "AI Engineer Course 2026 capstone",
     description:
-      "Interactive job interview simulator developed as the capstone project for 'The AI Engineer Course 2026'. Evaluates candidate responses in real time using LLMs and provides instant feedback.",
+      "Interactive job interview simulator developed as the capstone project for “The AI Engineer Course 2026”. Evaluates candidate responses in real time using LLMs and provides instant feedback.",
     tags: ["Python", "Streamlit", "LLMs", "GenAI", "Prompt engineering"],
     field: "#0e1117",
     images: [
@@ -208,7 +208,7 @@ export const experience: Job[] = [
         title: "AI & Mobile Lead",
         period: "Final year",
         points: [
-          "Designed and implemented AI solutions with Vertex AI and Firebase on the company's GCP infrastructure.",
+          "Designed and implemented AI solutions with Vertex AI and Firebase on the company’s GCP infrastructure.",
           "Built generative AI products such as automated WhatsApp messaging and a conversational agent builder.",
           "Gathered requirements directly with clients and turned them into architecture diagrams and cloud cost estimates.",
           "Planned deliverables and deadlines together with management.",
@@ -218,7 +218,7 @@ export const experience: Job[] = [
       {
         title: "Mobile Developer",
         points: [
-          "Built the company's mobile apps with Flutter and Kotlin Multiplatform.",
+          "Built the company’s mobile apps with Flutter and Kotlin Multiplatform.",
           "Maintained and evolved legacy apps in Cordova and in Capacitor + Angular.",
           "Handled builds, publishing, certificates and push notifications in Apple Developer.",
         ],
@@ -226,7 +226,7 @@ export const experience: Job[] = [
       {
         title: "Internship",
         points: [
-          "Administered the company's Google Workspace: users, access and tools.",
+          "Administered the company’s Google Workspace: users, access and tools.",
         ],
       },
     ],
@@ -261,7 +261,7 @@ export const experience: Job[] = [
 
 export const about = {
   summary: [
-    "I'm a full stack software engineer with three years of experience: TypeScript and React on the front end, Python on the back end, and mobile apps, all on Google Cloud Platform. I led the AI and Mobile area at 38 Grados Lab, integrating Vertex AI and Firebase into client products.",
+    "I’m a full stack software engineer with three years of experience: TypeScript and React on the front end, Python on the back end, and mobile apps, all on Google Cloud Platform. I led the AI and Mobile area at 38 Grados Lab, integrating Vertex AI and Firebase into client products.",
     "From cross-platform mobile apps in Flutter to responsive web work in React, I bring both technical rigour and user empathy to every project.",
     "I am a proactive, bilingual (C1) collaborator committed to excellence and adaptability across the full project lifecycle.",
   ],
@@ -298,10 +298,10 @@ export const education = [
   { title: "B.S. Software Engineering", detail: "" },
   {
     title: "The AI Engineer Course 2026: Complete AI Engineer Bootcamp",
-    detail: "Udemy (365 Careers) · July 2026 · 29.5 hours",
+    detail: "Udemy (365 Careers) · July 2026 · 29.5\u00a0hours",
   },
   {
-    title: "CS50's Introduction to Artificial Intelligence with Python",
+    title: "CS50’s Introduction to Artificial Intelligence with Python",
     detail: "Harvard University",
   },
 ];
