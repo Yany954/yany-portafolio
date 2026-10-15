@@ -3,7 +3,8 @@ import { Mail, Phone } from "lucide-react";
 import { SiteHeader } from "./components/SiteHeader";
 import { Hero } from "./components/Hero";
 import { Work } from "./components/Work";
-import { skills, timeline } from "./data/portafolioData";
+import { Experience } from "./components/Experience";
+import { skills } from "./data/portafolioData";
 import profileImage from "./assets/profile.png";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
       <main id="main">
       <Hero />
       <Work />
+      <Experience />
 
       {/* About Section */}
       <section
@@ -143,45 +145,6 @@ const App = () => {
         </div>
       </section>
 
-
-      {/* Experience Timeline Section */}
-      <section
-        id="experience"
-        className="py-20 px-6"
-      >
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-slate-700 via-violet-700 to-slate-500 bg-clip-text text-transparent">
-            My experience
-          </h2>
-          <div className="space-y-8">
-            {timeline.map((item, index) => (
-              <div
-                key={index}
-                className="relative pl-8 md:pl-16 border-l-2 border-slate-200 hover:border-violet-300 transition-all"
-              >
-                <div className="absolute left-0 top-0 w-4 h-4 bg-gradient-to-br from-violet-500 to-slate-400 rounded-full -translate-x-[9px] animate-pulse" />
-                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-slate-200 hover:shadow-lg hover:shadow-violet-100 transition-all">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span className="text-sm text-slate-500 font-mono">
-                      {item.year}
-                    </span>
-                    <span
-                      className={`px-3 py-1 bg-gradient-to-r ${item.color} rounded-full text-xs font-semibold text-slate-800`}
-                    >
-                      {item.tag}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2 text-slate-800">{item.title}</h3>
-                  <div className="text-violet-700 mb-3">
-                    {item.company} | {item.location}
-                  </div>
-                  <p className="text-slate-700">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section
