@@ -151,12 +151,31 @@
 @utility text-link {
   color: var(--foreground);
   text-decoration-line: underline;
-  text-decoration-color: var(--pink);
+  text-decoration-color: var(--link-decoration, var(--pink));
   text-decoration-thickness: 2px;
   text-underline-offset: 0.25em;
   transition: text-decoration-thickness 150ms ease;
   &:hover {
     text-decoration-thickness: 4px;
+  }
+}
+
+/* Inverse field for the closing section: navy in light mode, pink in dark. */
+@utility inverse {
+  --background: var(--navy);
+  --foreground: #f4f1ec;
+  --muted-foreground: #c9bcc6;
+  --ring: var(--pink);
+  background-color: var(--background);
+  color: var(--foreground);
+  @media (prefers-color-scheme: dark) {
+    --background: var(--pink);
+    --foreground: var(--navy);
+    --muted-foreground: var(--navy);
+    --primary: var(--navy);
+    --primary-foreground: var(--pink);
+    --ring: var(--navy);
+    --link-decoration: var(--navy);
   }
 }
 
