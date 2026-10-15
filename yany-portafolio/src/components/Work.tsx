@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ZoomIn } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { InView } from "@/components/ui/in-view";
+import { Lightbox } from "@/components/Lightbox";
 import { cn } from "@/lib/utils";
 import { projects, type Project } from "@/data/portfolio";
 
@@ -42,6 +43,29 @@ function Shot({
   );
 }
 
+/** Covers a screenshot frame; opens the full-screen viewer. */
+function EnlargeButton({
+  project,
+  onOpen,
+}: {
+  project: Project;
+  onOpen: (trigger: HTMLButtonElement) => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={(event) => onOpen(event.currentTarget)}
+      aria-label={`Enlarge ${project.title} screenshot`}
+      className="group absolute inset-0 cursor-zoom-in rounded-md focus-visible:outline-offset-[-4px]"
+    >
+      <span className="absolute right-2 bottom-2 inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-sm bg-background px-3 text-sm font-medium text-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground sm:right-3 sm:bottom-3">
+        <ZoomIn aria-hidden className="size-4" />
+        <span className="hidden sm:inline">Enlarge</span>
+      </span>
+    </button>
+  );
+}
+
 function ScreenSwitcher({
   project,
   value,
@@ -53,7 +77,10 @@ function ScreenSwitcher({
 }) {
   if (project.images.length < 2) return null;
   return (
-    <div role="group" aria-label={`${project.title} screens`} className="flex flex-wrap gap-2">
+    <div role="group" aria-labelledby={`${project.id}-screens`} className="flex flex-wrap items-center gap-2">
+      <span id={`${project.id}-screens`} className="mr-1 text-sm font-medium">
+        Screens
+      </span>
       {project.images.map((image, i) => (
         <button
           key={image.src}
@@ -61,10 +88,10 @@ function ScreenSwitcher({
           aria-pressed={i === value}
           onClick={() => onChange(i)}
           className={cn(
-            "min-h-11 rounded-sm px-4 text-sm font-medium transition-colors",
+            "min-h-11 cursor-pointer rounded-sm border-2 border-foreground px-4 text-sm font-medium transition-colors",
             i === value
               ? "bg-foreground text-background"
-              : "bg-card text-foreground hover:bg-accent",
+              : "bg-transparent text-foreground hover:bg-primary hover:text-primary-foreground",
           )}
         >
           {image.label}
@@ -77,6 +104,12 @@ function ScreenSwitcher({
 export function Work() {
   const [active, setActive] = useState(0);
   const [screens, setScreens] = useState<Record<string, number>>({});
+  const [viewing, setViewing] = useState<Project | null>(null);
+  const [opener, setOpener] = useState<HTMLButtonElement | null>(null);
+  const openViewer = (project: Project, trigger: HTMLButtonElement) => {
+    setOpener(trigger);
+    setViewing(project);
+  };
   const articles = useRef<(HTMLElement | null)[]>([]);
   const reduceMotion = useReducedMotion();
 
@@ -96,6 +129,8 @@ export function Work() {
   }, []);
 
   const screenOf = (id: string) => screens[id] ?? 0;
+  const setScreen = (id: string, index: number) =>
+    setScreens((prev) => ({ ...prev, [id]: index }));
   const current = projects[active];
 
   // Scroll reveal: the screenshot opens from a slight inset. Nothing starts
@@ -125,9 +160,9 @@ export function Work() {
         </p>
       </div>
 
-      <div className="mt-12 lg:mt-4 lg:grid lg:grid-cols-12 lg:gap-12">
-        {/* Desktop: one frame stays put while the projects pass beside it. */}
-        <div className="hidden lg:col-span-7 lg:block">
+      <div className="mt-12 xl:mt-4 xl:grid xl:grid-cols-12 xl:gap-12">
+        {/* Wide screens: one frame stays put while the projects pass beside it. */}
+        <div className="hidden xl:col-span-7 xl:block">
           <div className="sticky top-16 flex h-[calc(100svh-4rem)] items-center py-8">
             <div
               className="relative aspect-[4/3] w-full overflow-hidden rounded-md transition-colors duration-500"
@@ -142,11 +177,12 @@ export function Work() {
                   eager={i === 0}
                 />
               ))}
+              <EnlargeButton project={current} onOpen={(trigger) => openViewer(current, trigger)} />
             </div>
           </div>
         </div>
 
-        <ol className="lg:col-span-5">
+        <ol className="xl:col-span-5">
           {projects.map((project, i) => (
             <li
               key={project.id}
@@ -154,7 +190,7 @@ export function Work() {
                 articles.current[i] = el;
               }}
               data-index={i}
-              className="py-10 first:pt-0 lg:flex lg:min-h-[calc(100svh-4rem)] lg:flex-col lg:justify-center lg:py-16"
+              className="py-12 first:pt-0 md:py-16 xl:flex xl:min-h-[calc(100svh-4rem)] xl:flex-col xl:justify-center"
             >
               <article aria-labelledby={`${project.id}-title`}>
                 <InView
@@ -163,10 +199,11 @@ export function Work() {
                   viewOptions={{ once: true, margin: "0px 0px -10% 0px" }}
                 >
                   <div
-                    className="relative mb-8 aspect-[4/3] overflow-hidden rounded-md lg:hidden"
+                    className="relative mb-8 aspect-[4/3] overflow-hidden rounded-md xl:hidden"
                     style={{ backgroundColor: project.field }}
                   >
                     <Shot project={project} imageIndex={screenOf(project.id)} />
+                    <EnlargeButton project={project} onOpen={(trigger) => openViewer(project, trigger)} />
                   </div>
                 </InView>
 
@@ -193,11 +230,11 @@ export function Work() {
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 max-w-[52ch]">{project.description}</p>
+                  <p className="mt-4 max-w-[60ch]">{project.description}</p>
 
-                  <ul aria-label="Built with" className="mt-6 flex flex-wrap gap-2">
+                  <ul aria-label="Built with" className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
                     {project.tags.map((tag) => (
-                      <li key={tag} className="rounded-sm bg-card px-2 py-1 text-sm">
+                      <li key={tag}>
                         {tag}
                       </li>
                     ))}
@@ -207,9 +244,7 @@ export function Work() {
                     <ScreenSwitcher
                       project={project}
                       value={screenOf(project.id)}
-                      onChange={(index) =>
-                        setScreens((prev) => ({ ...prev, [project.id]: index }))
-                      }
+                      onChange={(index) => setScreen(project.id, index)}
                     />
                     {project.link ? (
                       <a
@@ -232,6 +267,14 @@ export function Work() {
           ))}
         </ol>
       </div>
+
+      <Lightbox
+        project={viewing}
+        index={viewing ? screenOf(viewing.id) : 0}
+        onIndexChange={(index) => viewing && setScreen(viewing.id, index)}
+        onClose={() => setViewing(null)}
+        returnFocus={opener}
+      />
     </section>
   );
 }
