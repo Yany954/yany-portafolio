@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Mail, Phone } from "lucide-react";
 import { SiteHeader } from "./components/SiteHeader";
 import { Hero } from "./components/Hero";
-import { Projects } from "./components/Projects";
+import { Work } from "./components/Work";
 import { skills, timeline } from "./data/portafolioData";
 import profileImage from "./assets/profile.png";
 
@@ -20,6 +20,7 @@ const App = () => {
       <SiteHeader />
       <main id="main">
       <Hero />
+      <Work />
 
       {/* About Section */}
       <section
@@ -142,8 +143,6 @@ const App = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <Projects />
 
       {/* Experience Timeline Section */}
       <section
