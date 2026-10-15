@@ -216,7 +216,7 @@ export function Work() {
                     <Badge
                       className={cn(
                         "h-auto rounded-sm px-2 py-1 text-sm",
-                        project.status.startsWith("Live")
+                        /^(Live|Completed)/.test(project.status)
                           ? "bg-primary text-primary-foreground"
                           : "bg-card text-foreground",
                       )}

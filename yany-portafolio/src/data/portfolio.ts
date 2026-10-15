@@ -1,3 +1,7 @@
+import frontDeskChatImg from "@/assets/front-desk-ai-chat.webp";
+import frontDeskRoomsImg from "@/assets/front-desk-ai-rooms.webp";
+import frontDeskProceduresImg from "@/assets/front-desk-ai-procedures.webp";
+import frontDeskContactsImg from "@/assets/front-desk-ai-contacts.webp";
 import trinitariosInicioImg from "@/assets/trinitarios-inicio.webp";
 import trinitariosAfiliadosImg from "@/assets/trinitarios-afiliados.webp";
 import trinitariosCofresImg from "@/assets/trinitarios-cofres.webp";
@@ -45,6 +49,47 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    id: "front-desk-ai",
+    title: "Front Desk AI",
+    kind: "Internal tool · La Quinta Inn & Suites",
+    status: "Completed",
+    description:
+      "As a front desk agent I had to memorise a long list of hotel-industry rules and procedures, and I wished I could just ask a chat. So I built one. Staff ask in plain words; Firestore vector search finds the procedures, rooms or contacts closest in meaning to the question, and the ChatGPT API turns them into a friendly answer. It also finds rooms that match exactly what a guest asks for. My manager loved it.",
+    tags: ["React", "ChatGPT API", "Firestore vector search", "RAG", "Firebase Auth", "Firestore", "Firebase Hosting"],
+    field: "#4c1d95",
+    images: [
+      {
+        src: frontDeskChatImg,
+        label: "Chat",
+        alt: "Front Desk AI chat answering a request for two queen beds with a list of matching rooms, then a question about early check-in",
+        width: 1200,
+        height: 855,
+      },
+      {
+        src: frontDeskRoomsImg,
+        label: "Rooms",
+        alt: "Admin panel listing 89 rooms with beds, bathroom, view, accessibility and class, plus CSV import",
+        width: 1188,
+        height: 832,
+      },
+      {
+        src: frontDeskProceduresImg,
+        label: "Procedures",
+        alt: "Admin panel listing 61 front desk procedures such as night audit, AC reset and Diamond member check-in",
+        width: 1198,
+        height: 850,
+      },
+      {
+        src: frontDeskContactsImg,
+        label: "Contacts",
+        alt: "Contacts directory of vendors, sister hotels and platforms; phone lines and account numbers blurred",
+        width: 1197,
+        height: 848,
+      },
+    ],
+    note: "No public link: accounts are invite-only because it holds private hotel information.",
+  },
   {
     id: "los-trinitarios",
     title: "Funerales Los Trinitarios",
@@ -240,6 +285,7 @@ export const experience: Job[] = [
         title: "Front Desk Agent",
         points: [
           "Mastering customer experience and understanding user needs through direct interaction. Exceptional service delivery and problem-solving.",
+          "Built Front Desk AI, an internal assistant that answers staff questions about procedures, rooms and contacts.",
         ],
       },
     ],
@@ -279,7 +325,10 @@ export const skillGroups: { name: string; items: string[] }[] = [
     name: "Backend & cloud",
     items: ["Python", "Google Cloud Platform", "Firebase (Auth, Firestore, Cloud Functions, FCM)", "Node.js", "AWS"],
   },
-  { name: "AI", items: ["Vertex AI", "LLM integration", "Generative AI solutions", "Prompt engineering"] },
+  {
+    name: "AI",
+    items: ["Vertex AI", "ChatGPT API", "LLM integration", "RAG with vector search", "Generative AI solutions", "Prompt engineering"],
+  },
   {
     name: "Practice",
     items: [
